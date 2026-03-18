@@ -1,0 +1,98 @@
+#include <iostream>
+using namespace std;
+
+/* 
+Define a function FindEmployees() that takes two integer parameters as a project's priority and the number of project tasks, and returns the number of people required for this project as an integer. The number of people is returned as follows:
+
+Number of people required
+Priority	≤ 55 tasks	                  56 - 119 tasks	                  ≥ 120 tasks
+1	60	                                      70	                               80
+2	40	                                      45	                               55
+3	25	                                      30	                               35
+
+If priority number is 4 or 5 return 11. 
+
+Ex: If the input is 1 50, then the output is:
+60
+
+*/ 
+
+int FindEmployees(int priority, int tasks) { 
+   
+   switch(priority) { 
+   
+   // Priority 1 logic: 
+     case 1: 
+     if(tasks <= 55) { 
+     return 60;
+     break; 
+     }
+     
+     else if(tasks > 55 & tasks < 120) { 
+     return 70;
+     break; 
+     }
+     
+     else { 
+     return 80;   
+     break; 
+     }
+     
+   // Priority 2 Logic: 
+      case 2: 
+     if(tasks <= 55) { 
+     return 40;
+     break; 
+     }
+     
+     else if(tasks > 55 & tasks < 120) { 
+     return 45;
+     break; 
+     }
+     
+     else { 
+     return 55;   
+     break; 
+     }
+
+     // Priority 2 Logic: 
+     case 3: 
+     if(tasks <= 55) { 
+     return 25;
+     break; 
+     }
+     
+     else if(tasks > 55 & tasks < 120) { 
+     return 30;
+     break; 
+     }
+     
+     else { 
+     return 35;   
+     break; 
+     }
+     
+     case 4: 
+     return 11; 
+     break; 
+   
+     
+     case 5: 
+     return 11; 
+     break; 
+     
+  } // End of Switch
+  
+     } // End of FindEMployees Function. 
+  
+int main() {
+   int priority;
+   int numberOfTasks;
+
+   cin >> priority;
+   cin >> numberOfTasks;
+
+   cout << FindEmployees(priority, numberOfTasks) << endl;
+
+   return 0;
+}
